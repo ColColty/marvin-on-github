@@ -1,0 +1,27 @@
+version: "2"
+
+services:
+  db:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    volumes:
+      - db:/data/db
+
+  scraper:
+    build: .
+    environment:
+      GITHUB_TOKEN: <your token>
+      EMAIL_USERNAMES: <email>
+      EMAIL_USERNAMES_PASSWORD: <password email>
+      EMAIL_USERNAMES_SMTP_PORT: <smtp port>
+      EMAIL_USERNAMES_SMTP_SERVER: <smtp server>
+      SUBJECT_EMAIL_USERNAMES: <subject of the emails>
+      DB_USERNAME: root
+      DB_PASSWORD: rootpassword
+    depends_on:
+      - db
+
+volumes:
+  db: {}
