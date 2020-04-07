@@ -1,4 +1,4 @@
-from src.alumns_usernames import getNewUsernames
+from src.students_usernames import getNewUsernames
 from src.invit_accept import acceptInvitations
 import time
 import os
