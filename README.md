@@ -7,6 +7,12 @@ The purpose of this project is to allow everyone to contribute to make things wo
 This program will run for ever in a docker container. This will execute 2 functions every hour.
 The first function will be the one who gets all the Usernames of the students from the email and the second one will be the one who accept all the new invitations to contribute on projects.
 
+The mails that the students have to send has to have the following things in the body:
+```
+Username: <The student username>
+Email: <The student email>
+```
+
 ## How to use it
 
 First-of-all this projet use Docker and Docker Compose to run, so docker and docker-compose has to be installed in your machine.
@@ -24,7 +30,7 @@ Then on the `docker-compose.yml` file, we will find some environment values. The
 - DB_USERNAME: The username of the connected database
 - DB_PASSWORD: The password of the connected database
 
-#### Execute
+#### Execute
 
 To execute the program, you just need to clone the repository and at the root of it run: `docker-compose up`
 
